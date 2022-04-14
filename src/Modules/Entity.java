@@ -6,8 +6,6 @@ package Modules;
 public abstract class Entity
 {
     String name;
-    String className; // try making final
-    String nameColor; // Color used when name is printed
 
     public Entity(String name)
     {
@@ -16,6 +14,7 @@ public abstract class Entity
 
     // Abstract Methods:
     public abstract Data createData(); // Used to generate the data needed to recreate an instance of this entity. Should return data that can be written to file.
+    public abstract String getClassName(); // Used particularly to help write to file so that the right type of object is instatiated.
     
     
     // Public Setters:
@@ -23,17 +22,10 @@ public abstract class Entity
     {
         this.name = name;
     }
-    public void setNameColor(String color)
-    {
-        nameColor = color;
-    }
+    
     // Public Getters:
     public String getName()
     {
         return name;
-    }
-    public String getClassName() // Used particularly to help write to file so that the right type of object is instatiated.
-    {
-        return className;
     }
 }

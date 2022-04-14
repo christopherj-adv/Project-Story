@@ -18,6 +18,7 @@ public class ConsumableItem extends Item
 
         this.quantity = quantity;
         this.maxQuantity = maxQuantity;
+        this.rarity = itemRarity.COMMON;
 
         // Check if the effect this item has is not an instance of either effect classes
         if (!(effect instanceof Buff || effect instanceof Debuff))
@@ -26,5 +27,10 @@ public class ConsumableItem extends Item
         }
 
         this.effect = effect;
+    }
+    @Override
+    public String getClassName()
+    {
+        return "ConsumableItem";
     }
 }

@@ -1,7 +1,6 @@
 package Modules.Items;
 
 import Modules.Entity;
-import Modules.Color.Color;
 import Modules.Data;
 
 enum itemRarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, HOLY}
@@ -10,6 +9,7 @@ public class Item extends Entity
     String description;
 
     itemRarity rarity;
+    String nameColor; // Goes with rarity.
 
     public Item(String name, String description)
     {
@@ -17,7 +17,7 @@ public class Item extends Entity
         this.description = description;
 
         itemRarity rarity = itemRarity.COMMON;
-        setName(rarityAsColor(rarity));
+        setNameColor(rarityAsColor(rarity));
     }
     public Item(String name, String description, itemRarity rarity)
     {
@@ -35,12 +35,22 @@ public class Item extends Entity
         return null;
     }
 
+    // Must be changed to fit GUI components later.
     public String rarityAsColor(itemRarity rarity)
     {
-        return Color.TEXT_BLACK;
+        return "BLACK";
     }
 
+    // Setters
+    public void setNameColor(String color)
+    {
+        nameColor = color;
+    }
     // Getters:
+    public String getClassName()
+    {
+        return "Item";
+    }
     public String getDescription()
     {
         return description;
