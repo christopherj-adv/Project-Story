@@ -1,15 +1,39 @@
 package Modules;
-import Modules.Color.Color;
-
     /*
         This is the most generic "Object." Characters, Scenes, and Items all extend this.
-
     */
 
-public interface Entity
+public abstract class Entity
 {
-    Data createData(); // Used to generate the data needed to recreate an instance of this entity. Should return data that can be written to file.
+    String name;
+    String className; // try making final
+    String nameColor; // Color used when name is printed
 
-    String getName();
-    String getClassName(); // Used particularly to help write to file so that the right type of object is instatiated.
+    public Entity(String name)
+    {
+        this.name = name;
+    }
+
+    // Abstract Methods:
+    public abstract Data createData(); // Used to generate the data needed to recreate an instance of this entity. Should return data that can be written to file.
+    
+    
+    // Public Setters:
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    public void setNameColor(String color)
+    {
+        nameColor = color;
+    }
+    // Public Getters:
+    public String getName()
+    {
+        return name;
+    }
+    public String getClassName() // Used particularly to help write to file so that the right type of object is instatiated.
+    {
+        return className;
+    }
 }

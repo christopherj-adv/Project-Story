@@ -1,25 +1,52 @@
 package Modules.Items;
 
 import Modules.Entity;
+import Modules.Color.Color;
+import Modules.Data;
 
-public abstract class Item implements Entity
+enum itemRarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, HOLY}
+public class Item extends Entity
 {
-    private String name;
-    private String description;
+    String description;
 
-    enum rarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, HOLY}
+    itemRarity rarity;
 
-    // Setters:
-    public void setName(String name)
+    public Item(String name, String description)
     {
-        this.name = name;
+        super(name);
+        this.description = description;
+
+        itemRarity rarity = itemRarity.COMMON;
+        setName(rarityAsColor(rarity));
     }
-    
+    public Item(String name, String description, itemRarity rarity)
+    {
+        // Initialize Values
+        super(name);
+        this.description = description;
+        this.rarity = rarity;
+
+        // Set the color of the item when used
+        setNameColor(rarityAsColor(rarity));
+    }
+
+    public Data createData()
+    {
+        return null;
+    }
+
+    public String rarityAsColor(itemRarity rarity)
+    {
+        return Color.TEXT_BLACK;
+    }
+
     // Getters:
-    public String getName()
+    public String getDescription()
     {
-        return name;
+        return description;
     }
-
-    
+    public itemRarity getRarity()
+    {
+        return rarity;
+    }
 }
