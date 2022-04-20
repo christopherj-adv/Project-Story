@@ -5,41 +5,49 @@ import Modules.Entity;
 enum itemRarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, HOLY}
 public class Item extends Entity
 {
+    int itemID;
     String description;
-
     itemRarity rarity;
-    String nameColor; // Goes with rarity.
 
-    public Item(String name, String description)
+    Item(String name, String description, int itemID)
     {
         super(name);
+        this.itemID = itemID;
         this.description = description;
-
-        itemRarity rarity = itemRarity.COMMON;
-        setNameColor(rarityAsColor(rarity));
+        this.rarity = itemRarity.COMMON;
     }
-    public Item(String name, String description, itemRarity rarity)
+    Item(String name, String description, int itemID, itemRarity rarity)
     {
-        // Initialize Values
         super(name);
+        this.itemID = itemID;
         this.description = description;
         this.rarity = rarity;
-
-        // Set the color of the item when used
-        setNameColor(rarityAsColor(rarity));
     }
 
     // Must be changed to fit GUI components later.
     public String rarityAsColor(itemRarity rarity)
     {
-        return "BLACK";
+        switch (rarity) {
+            case COMMON:
+                
+                break;
+            case UNCOMMON:
+                break;
+            case RARE:
+                break;
+            case EPIC:
+                break;
+            case LEGENDARY:
+                break;
+            case HOLY:
+                break;
+            default:
+                break;
+        }
+
+        return "UNDEFINED";
     }
 
-    // Setters
-    public void setNameColor(String color)
-    {
-        nameColor = color;
-    }
     // Getters:
     public String getDescription()
     {

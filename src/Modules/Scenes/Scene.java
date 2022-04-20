@@ -26,6 +26,5 @@ public class Scene extends Entity
     void addChoice()
     {
 
-        // TODO: Add choices to array here.
     }
 }

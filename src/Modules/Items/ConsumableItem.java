@@ -12,9 +12,9 @@ public class ConsumableItem extends Item
 
     Object effect;
 
-    public ConsumableItem(String name, String description, int quantity, int maxQuantity, Object effect) throws ItemCreationException
+    public ConsumableItem(String name, String description, int itemID, int quantity, int maxQuantity, Object effect) throws ItemCreationException
     {
-        super(name, description);
+        super(name, description, itemID);
 
         this.quantity = quantity;
         this.maxQuantity = maxQuantity;
