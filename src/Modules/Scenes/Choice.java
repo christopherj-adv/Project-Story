@@ -2,5 +2,8 @@ package Modules.Scenes;
 
 public class Choice
 {
-    Scene link;    
+    Scene linkIn;
+    Scene[] linkOut;
+
+    boolean visible;
 }

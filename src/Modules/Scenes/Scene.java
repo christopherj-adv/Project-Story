@@ -1,11 +1,12 @@
 package Modules.Scenes;
+import java.util.ArrayList;
 
 import Modules.Entity;
 
-public abstract class Scene extends Entity
+public class Scene extends Entity
 {
     String description;
-    Choice[] options;
+    ArrayList<Choice> choices;
 
     Scene(String name, String description)
     {
@@ -16,11 +17,15 @@ public abstract class Scene extends Entity
     {
         super(name);
         this.description = description;
-        this.options = options;
+        
+        choices = new ArrayList<Choice>();
+
+
     }
 
     void addChoice()
     {
+
         // TODO: Add choices to array here.
     }
 }

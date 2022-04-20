@@ -12,15 +12,4 @@ public class Character extends Entity
     {
         super(name);
     }
-
-    public Data createData()
-    {
-        String fo = getClassName(); // Will be written to file.
-        return null;
-    }
-    @Override
-    public String getClassName()
-    {
-        return "Character";
-    }
 }

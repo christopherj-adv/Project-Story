@@ -28,9 +28,4 @@ public class ConsumableItem extends Item
 
         this.effect = effect;
     }
-    @Override
-    public String getClassName()
-    {
-        return "ConsumableItem";
-    }
 }

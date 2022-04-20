@@ -1,7 +1,6 @@
 package Modules.Items;
 
 import Modules.Entity;
-import Modules.Data;
 
 enum itemRarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, HOLY}
 public class Item extends Entity
@@ -30,11 +29,6 @@ public class Item extends Entity
         setNameColor(rarityAsColor(rarity));
     }
 
-    public Data createData()
-    {
-        return null;
-    }
-
     // Must be changed to fit GUI components later.
     public String rarityAsColor(itemRarity rarity)
     {
@@ -47,10 +41,6 @@ public class Item extends Entity
         nameColor = color;
     }
     // Getters:
-    public String getClassName()
-    {
-        return "Item";
-    }
     public String getDescription()
     {
         return description;
