@@ -1,6 +1,7 @@
 package Modules;
 
-// Whether this class is needed remains to be seen. The theory is that it will hold information that will be used to write to disk later.
+
+
 
 public class GameData
 {
@@ -10,18 +11,6 @@ public class GameData
     {
         
     }
-
-    void createDataFromScene()
-    {
-        /*
-            List of variables to track:
-                - Name
-                - Description
-                - 
-
-        */
-    }
-
 
     public byte[] getData()
     {
