@@ -5,25 +5,32 @@ import Modules.Entity;
 
 public class Scene extends Entity
 {
-    String description;
+    String sceneText;
     ArrayList<Choice> choices;
 
     Scene(String name, String description)
     {
         super(name);
-        this.description = description;
+        this.sceneText = description;
     }
     Scene(String name, String description, Choice[] options)
     {
         super(name);
-        this.description = description;
+        this.sceneText = description;
         
         choices = new ArrayList<Choice>();
 
 
     }
 
-    void addChoice()
+    void addChoice(String choiceDescription, SkillCheck sCheck)
+    {
+        if (sCheck != null)
+        {
+            
+        }
+    }
+    String[] getChoices()
     {
 
     }

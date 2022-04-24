@@ -70,4 +70,69 @@ public class Character extends Entity
 
         return 0;
     }
+
+    // Getters:
+    public int getHealth()
+    {
+        return health;
+    }
+    public int getMaxHealth()
+    {
+        return maxHealth;
+    }
+    public int getLevel()
+    {
+        return level;
+    }
+    public int getStrength()
+    {
+        return strength;
+    }
+    public int getMagic()
+    {
+        return magic;
+    }
+    public int getDefense()
+    {
+        return defense;
+    }
+    public int getResistance()
+    {
+        return resistance;
+    }
+    public float getExperience()
+    {
+        return experience;
+    }
+    public float getMaxExperience()
+    {
+        return maxExperience;
+    }
+    public Weapon getMainHand()
+    {
+        return mainHand;
+    }
+    public Item getOffHand()
+    {
+        return offHand;
+    }
+    public Equipment getArmor()
+    {
+        return Armor;
+    }
+    public ArrayList<Item> getInventory()
+    {
+        return inventory;
+    }    
+
+    // Inventory Getters:
+    public Item getInventoryIdxItem(int idx)
+    {
+        if (idx < 0 || idx >= inventory.size())
+        {
+            return null;
+        }
+        
+        return inventory.get(idx);
+    }
 }

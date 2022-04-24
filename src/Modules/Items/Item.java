@@ -27,25 +27,33 @@ public class Item extends Entity
     // Must be changed to fit GUI components later.
     public String rarityAsColor(itemRarity rarity)
     {
+        String col;
+
         switch (rarity) {
             case COMMON:
-                
+                col = "BLACK";
                 break;
             case UNCOMMON:
+                col = "GREEN";     
                 break;
             case RARE:
+                col = "BLUE";
                 break;
             case EPIC:
+                col = "PURPLE";
                 break;
             case LEGENDARY:
+                col = "GOLD";
                 break;
             case HOLY:
+                col = "GREY";
                 break;
             default:
+                col = "UNDEFINED";
                 break;
         }
 
-        return "UNDEFINED";
+        return col;
     }
 
     // Getters:
