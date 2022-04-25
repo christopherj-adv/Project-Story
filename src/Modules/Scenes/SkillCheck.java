@@ -1,6 +1,6 @@
 package Modules.Scenes;
 
-import Modules.Characters.Character;
+import Modules.Characters.*;
 
 // Used to dynamically add options in scenes.
 public class SkillCheck
@@ -32,11 +32,44 @@ public class SkillCheck
         this.subStringNameCheck = subStringNameCheck;
     }
 
-    boolean testCheck(Character c)
+    public boolean testCheck(Player c)
     {
         if (c.getHealth() < minHealth)
         {
             return false;
+        }
+        if (c.getLevel() < minLevel)
+        {
+            return false;
+        }
+        if (c.getStrength() < minStrength)
+        {
+            return false;
+        }
+        if (c.getMagic() < minMagic)
+        {
+            return false;
+        }
+        if (c.getDefense() < minDefense)
+        {
+            return false;
+        }
+        if (c.getResistance() < minResistance)
+        {
+            return false;
+        }
+
+        // Check for name
+        if (nameCheck != null)
+        {
+            if (!c.getName().equals(nameCheck))
+            {
+                return false;
+            }
+        }
+        else if (subStringNameCheck != null) // Check for name substring, doesn't make sense to do both
+        {
+            
         }
 
 

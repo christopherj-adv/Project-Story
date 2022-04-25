@@ -6,7 +6,7 @@ import Modules.*;
 import Modules.Items.Equipment;
 import Modules.Items.Item;
 import Modules.Items.Weapon;
-public class Character extends Entity
+public class Player extends Entity
 {
     // Stats
     int health, maxHealth, level,
@@ -23,7 +23,7 @@ public class Character extends Entity
     ArrayList<Item> inventory;
 
 
-    public Character(String name)
+    public Player(String name)
     {
         super(name);
     }
