@@ -6,11 +6,14 @@ import Modules.*;
 import Modules.Items.Equipment;
 import Modules.Items.Item;
 import Modules.Items.Weapon;
+
 public class Player extends Entity
 {
     // Stats
     int health, maxHealth, level,
         strength, magic, defense, resistance;        
+
+    int[] sceneTrail; // Tracks where character has been
 
     float experience; // Current experience.
     float maxExperience; // Experience needed to level up.
