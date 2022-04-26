@@ -11,15 +11,19 @@ public class Scene extends Entity
     ArrayList<Choice> choices; // The choices that show up in each scene (i.e. what you can do)
     ArrayList<Choice> activeChoices; // Only the ones that pass skillchecks
 
-    Scene(String name, String description)
+    int id; // Scene unique identifier
+
+    public Scene(String name, String description, int id)
     {
         super(name);
         this.sceneText = description;
+        this.id = id;
     }
-    Scene(String name, String description, Choice[] options)
+    public Scene(String name, String description, int id, Choice[] options)
     {
         super(name);
         this.sceneText = description;
+        this.id = id;
 
         choices = new ArrayList<Choice>();
 
@@ -30,7 +34,7 @@ public class Scene extends Entity
     }
 
     // Set up the scene to be displayed
-    void activateScene(Player c)
+    public void activateScene(Player c)
     {
         for (int i = 0; i < choices.size(); i++)
         {
@@ -44,7 +48,7 @@ public class Scene extends Entity
 
     }
 
-    String getChoices()
+    public String getChoices()
     {
         int cs = choices.size();
 
@@ -62,5 +66,15 @@ public class Scene extends Entity
         }
 
         return sb.toString();
+    }
+
+    public String getSceneText()
+    {
+        return sceneText;
+    }
+
+    public int getId()
+    {
+        return id;
     }
 }

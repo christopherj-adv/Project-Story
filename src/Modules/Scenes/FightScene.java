@@ -2,8 +2,8 @@ package Modules.Scenes;
 
 public class FightScene extends Scene
 {
-    FightScene(String name, String description)
+    public FightScene(String name, String description, int id)
     {
-        super(name, description);
+        super(name, description, id);
     }
 }

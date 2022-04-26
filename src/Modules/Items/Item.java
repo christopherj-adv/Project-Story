@@ -9,14 +9,14 @@ public class Item extends Entity
     String description;
     itemRarity rarity;
 
-    Item(String name, String description, int itemID)
+    public Item(String name, String description, int itemID)
     {
         super(name);
         this.itemID = itemID;
         this.description = description;
         this.rarity = itemRarity.COMMON;
     }
-    Item(String name, String description, int itemID, itemRarity rarity)
+    public Item(String name, String description, int itemID, itemRarity rarity)
     {
         super(name);
         this.itemID = itemID;

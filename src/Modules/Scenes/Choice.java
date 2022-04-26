@@ -6,27 +6,22 @@ public class Choice
     String text;
 
     Scene linkIn;
-    Scene parent;
     Scene linkOut;
     
     SkillCheck skillCheck; // Controls whether the character meets the criteria for this choice to be visible to the user.
 
 
-    Choice(String text, Scene linkIn, Scene parent, Scene linkOut)
+    public Choice(String text, Scene linkOut)
     {
         this.text = text;
-        this.linkIn = linkIn;
-        this.parent = parent;
         this.linkOut = linkOut;
 
         skillCheck = null;
     }
 
-    Choice(String text, Scene linkIn, Scene parent, Scene linkOut, SkillCheck skillCheck)
+    public Choice(String text, Scene linkOut, SkillCheck skillCheck)
     {
         this.text = text;
-        this.linkIn = linkIn;
-        this.parent = parent;
         this.linkOut = linkOut;
         this.skillCheck = skillCheck;
     }

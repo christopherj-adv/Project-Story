@@ -19,7 +19,7 @@ public class SkillCheck
     String nameCheck; // Check for a specific name.
     String subStringNameCheck; // Check if a specific string is in the Character name.
 
-    SkillCheck(int minHealth, int minLevel, int minStrength, int minMagic, int minDefense, int minResistance, String nameCheck, String subStringNameCheck)
+    public SkillCheck(int minHealth, int minLevel, int minStrength, int minMagic, int minDefense, int minResistance, String nameCheck, String subStringNameCheck)
     {
         this.minHealth = minHealth;
         this.minLevel = minLevel;

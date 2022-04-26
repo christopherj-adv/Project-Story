@@ -9,7 +9,7 @@ public class Weapon extends Item
 
     boolean twoHanded;
 
-    Weapon(String name, String description, int itemID, int str, int mag)
+    public Weapon(String name, String description, int itemID, int str, int mag)
     {
         super(name, description, itemID);
         strengthModifier = str;
