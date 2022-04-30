@@ -18,6 +18,7 @@ public class ProjectStory
         Scene example = new Scene("The Forest", "You wake up in small pool of water in a forest. The sky is overcast, but small rays of sunlight peek through the clouds.", 1);
         Choice exampleA = new Choice("Stand up and dust yourself off.", null, null);
         
+        window.updateScene(example);
 
     }
 

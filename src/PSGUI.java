@@ -11,44 +11,46 @@ public class PSGUI extends WindowAdapter
 
     FlowLayout fl = new FlowLayout();
 
-    String sceneTitle;
-    String sceneText;
-
-    JTextPane titlePane;
+    JTextArea titleText;
+    JTextArea sceneText;
 
     PSGUI()
     {
-        // Sets up windowFrame
+        // Initialize window frame
         windowFrame = new JFrame("Project Story");
         windowFrame.setSize(750, 650);
         windowFrame.addWindowListener(this); // Lets the window and the program interact
         
-        
-        
-        // Sets up windowPanel
+        // Initialize window panel
         windowPanel = new JPanel();
-        windowFrame.add(windowPanel, BorderLayout.CENTER);
+        windowFrame.add(windowPanel, BorderLayout.NORTH);
         windowPanel.setBackground(Color.black);
 
-        // Set Title Text Pane
-        titlePane = new JTextPane();
-        windowPanel.add(titlePane);
-        titlePane.setBackground(Color.black);
-        titlePane.setForeground(Color.white);
-        titlePane.setEditable(false);
+        // Initialize title text
+        titleText = new JTextArea();
+        windowPanel.add(titleText, BorderLayout.NORTH);
+        titleText.setBackground(Color.black);
+        titleText.setForeground(Color.white);
+        titleText.setEditable(false);
+        titleText.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
 
-        titlePane.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+        // Initialize scene text
+        sceneText = new JTextArea();
+        windowPanel.add(sceneText, BorderLayout.SOUTH);
+        sceneText.setBackground(Color.white);
+        sceneText.setForeground(Color.black);
+        sceneText.setEditable(false);
+        sceneText.setFont(new Font("Comic Sans MS", Font.PLAIN, 16));
 
-
-        titlePane.setText("example");
+        sceneText.setLineWrap(true);
 
         windowFrame.setVisible(true);
-
     }
 
     void updateScene(Scene sc)
     {
-
+        titleText.setText(sc.getName());
+        sceneText.setText(sc.getSceneText());
     }
 
 
