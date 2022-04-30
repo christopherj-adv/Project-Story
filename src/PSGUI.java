@@ -7,42 +7,84 @@ import Modules.Scenes.*;
 public class PSGUI extends WindowAdapter
 {
     JFrame windowFrame;
-    JPanel windowPanel;
 
-    FlowLayout fl = new FlowLayout();
+    JPanel titleTextPanel;
+    JPanel sceneTextPanel;
+    JPanel infoPanel;
+    JPanel choiceTextPanel;    
 
     JTextArea titleText;
     JTextArea sceneText;
+    JTextArea infoText;
+
 
     PSGUI()
     {
         // Initialize window frame
         windowFrame = new JFrame("Project Story");
         windowFrame.setSize(750, 650);
-        windowFrame.addWindowListener(this); // Lets the window and the program interact
-        
-        // Initialize window panel
-        windowPanel = new JPanel();
-        windowFrame.add(windowPanel, BorderLayout.NORTH);
-        windowPanel.setBackground(Color.black);
+        windowFrame.addWindowListener(this); // Lets the window and the program interact.
 
-        // Initialize title text
+        // Initialize panels and their respective settings.
+        titleTextPanel = new JPanel();
+        sceneTextPanel = new JPanel();
+        infoPanel = new JPanel();
+        choiceTextPanel = new JPanel();
+
+        titleTextPanel.setBackground(Color.black);
+        sceneTextPanel.setBackground(Color.black);
+        infoPanel.setBackground(Color.black);
+        choiceTextPanel.setBackground(Color.black);
+
+        // Add these panels to the frame.
+        windowFrame.add(titleTextPanel, BorderLayout.NORTH);
+        windowFrame.add(sceneTextPanel, BorderLayout.WEST);
+        windowFrame.add(infoPanel, BorderLayout.EAST);
+        windowFrame.add(choiceTextPanel, BorderLayout.SOUTH);
+
+
+        // Initialize text objects and basic settings / fonts.
         titleText = new JTextArea();
-        windowPanel.add(titleText, BorderLayout.NORTH);
-        titleText.setBackground(Color.black);
-        titleText.setForeground(Color.white);
-        titleText.setEditable(false);
-        titleText.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
-
-        // Initialize scene text
         sceneText = new JTextArea();
-        windowPanel.add(sceneText, BorderLayout.SOUTH);
-        sceneText.setBackground(Color.white);
-        sceneText.setForeground(Color.black);
-        sceneText.setEditable(false);
+        infoText = new JTextArea();
+
+        titleTextPanel.add(titleText);
+        sceneTextPanel.add(sceneText);
+        infoPanel.add(infoText);
+
+        
+        titleText.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
         sceneText.setFont(new Font("Comic Sans MS", Font.PLAIN, 16));
+        infoText.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+
+
+
+        sceneText.setAlignmentX(JTextArea.LEFT_ALIGNMENT);
+
+
 
         sceneText.setLineWrap(true);
+
+        sceneText.setSize(625, 100);
+
+        
+
+
+
+
+
+
+        JButton xd = new JButton();
+        xd.setText("ksnadfolasn");
+
+        choiceTextPanel.add(xd);
+        
+
+        titleText.setEditable(false);
+        sceneText.setEditable(false);
+        
+       
+
 
         windowFrame.setVisible(true);
     }
@@ -51,6 +93,7 @@ public class PSGUI extends WindowAdapter
     {
         titleText.setText(sc.getName());
         sceneText.setText(sc.getSceneText());
+        infoText.setText("hdiojafbojs");
     }
 
 

@@ -5,12 +5,16 @@ import Modules.Scenes.Scene;
 public class ProjectStory
 {
     // Game runner
-    Player p = new Player("Player");
+    Player  userPlayer;
     PSGUI window;
 
     ProjectStory()
     {
+
         window = new PSGUI();
+        userPlayer = new Player("Name", 10, 10, 1, 5, 5, 5, 5);
+
+
 
         Scene gameover = new Scene("Exit", "You have met a terrible fate!", 0);
         Choice exit = new Choice("Exit", gameover, null);
