@@ -26,9 +26,25 @@ public class Player extends Entity
     ArrayList<Item> inventory;
 
 
-    public Player(String name)
+    public Player(String name, int health, int maxHealth, int level, int strength, int magic, int defense, int resistance)
     {
         super(name);
+
+        this.health = health;
+        this.maxHealth = maxHealth;
+        this.level = level;
+        this.strength = strength;
+        this.defense = defense;
+        this.resistance = resistance;
+
+        experience = 0;
+        maxExperience = (level * level * 75);
+
+        mainHand = null;
+        offHand = null;
+        Armor = null;
+
+        inventory = new ArrayList<Item>();
     }
 
     void addToInventory(Item item)
@@ -75,6 +91,21 @@ public class Player extends Entity
     }
 
     // Getters:
+    public String getStatsAsString()
+    {
+        String str = "";
+        
+        str += "Health: " + getHealth() + "/" + getMaxHealth();
+        str += "\nLevel: " + getLevel() + "Exp: " + getExperience() + "/" + getMaxExperience();
+        str += "\nStr: " + getStrength();
+        str += "\nMag: " + getMagic();
+        str += "\nDef: " + getDefense();
+        str += "\nRes: " + getResistance();
+
+
+        return str;
+    }
+
     public int getHealth()
     {
         return health;
