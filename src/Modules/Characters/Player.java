@@ -34,6 +34,7 @@ public class Player extends Entity
         this.maxHealth = maxHealth;
         this.level = level;
         this.strength = strength;
+        this.magic = magic;
         this.defense = defense;
         this.resistance = resistance;
 
@@ -95,8 +96,25 @@ public class Player extends Entity
     {
         String str = "";
         
-        str += "Health: " + getHealth() + "/" + getMaxHealth();
-        str += "\nLevel: " + getLevel() + "Exp: " + getExperience() + "/" + getMaxExperience();
+        str += getName() + ", Lv. " + getLevel();
+
+        String mh = "";
+        String oh = "";
+
+        if (mainHand == null)
+        {
+            mh = "empty";
+        }
+        if (offHand == null)
+        {
+            oh = "empty";
+        }
+
+        str += "\nMain Hand: " + mh;
+        str += "\nOff Hand: " + oh;
+
+        str += "\nHealth: " + getHealth() + "/" + getMaxHealth();
+        str += "\nExp: " + getExperience() + "/" + getMaxExperience();
         str += "\nStr: " + getStrength();
         str += "\nMag: " + getMagic();
         str += "\nDef: " + getDefense();

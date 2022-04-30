@@ -12,7 +12,7 @@ public class ProjectStory
     {
 
         window = new PSGUI();
-        userPlayer = new Player("Name", 10, 10, 1, 5, 5, 5, 5);
+        userPlayer = new Player(System.getProperty("user.name"), 10, 10, 1, 5, 5, 5, 5);
 
 
 
@@ -22,7 +22,13 @@ public class ProjectStory
         Scene example = new Scene("The Forest", "You wake up in small pool of water in a forest. The sky is overcast, but small rays of sunlight peek through the clouds.", 1);
         Choice exampleA = new Choice("Stand up and dust yourself off.", null, null);
         
-        window.updateScene(example);
+        window.updateScene(example, userPlayer);
+
+
+
+        StringBuilder sb = new StringBuilder();
+
+        
 
     }
 

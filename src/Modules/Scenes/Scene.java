@@ -34,13 +34,15 @@ public class Scene extends Entity
     }
 
     // Set up the scene to be displayed
-    public void activateScene(Player c)
+    public void activateScene(Player p)
     {
+        activeChoices = new ArrayList<Choice>();
+    
         for (int i = 0; i < choices.size(); i++)
         {
             Choice curChoice = choices.get(i);
 
-            if (curChoice.isVisible(c))
+            if (curChoice.isVisible(p))
             {
                 activeChoices.add(curChoice);
             }
@@ -48,24 +50,21 @@ public class Scene extends Entity
 
     }
 
-    public String getChoices()
+    public Choice[] getActiveChoices()
     {
-        int cs = choices.size();
-
-        if (cs == 0)
+        if (activeChoices.size() < 0)
         {
             return null;
         }
 
-        StringBuilder sb = new StringBuilder(); // Will be used to assemble the list of choices.
+        Choice[] choices = new Choice[activeChoices.size()];
 
-        for (int i = 0; i < cs; i++)
+        for (int i = 0; i < activeChoices.size(); i++)
         {
-            Choice curChoice = choices.get(i);
-            sb.append(i + ". " + curChoice.text);
+            choices[i] = activeChoices.get(i);    
         }
 
-        return sb.toString();
+        return choices;
     }
 
     public String getSceneText()
