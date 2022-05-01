@@ -1,7 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-
 import javax.swing.*;
 
 import Modules.Characters.Player;
@@ -21,6 +19,8 @@ public class PSGUI extends WindowAdapter
     JTextArea sceneText;
     JTextArea infoText;
     JPanel emptySpace; // Covers extra space that would otherwise look white.
+
+    JButton[] choiceButtons;
 
     PSGUI()
     {
@@ -58,7 +58,6 @@ public class PSGUI extends WindowAdapter
         titleTextPanel.add(titleText);
         sceneTextPanel.add(sceneText);
         infoPanel.add(infoText);
-
         
         titleText.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
         sceneText.setFont(new Font("Comic Sans MS", Font.PLAIN, 16));
@@ -88,36 +87,73 @@ public class PSGUI extends WindowAdapter
         titleText.setEditable(false);
         sceneText.setEditable(false);
         
-       
-
 
         windowFrame.setVisible(true);
     }
 
     void updateScene(Scene sc, Player p)
     {
+        // Set up the textual elements of the scene and the player stats on the right.
         titleText.setText(sc.getName());
         sceneText.setText(sc.getSceneText());
         infoText.setText(p.getStatsAsString());
-
+        
+        
+        
+        
 
         // Activates the available choices.
         sc.activateScene(p);
-
         Choice[] choices =  sc.getActiveChoices();
 
-        // The following code determines what grid size will be used.
-
+        if (choices == null)
+        {
+            return;
+        }
+        
         GridLayout gl;
 
-                
+        choiceButtonPanel.removeAll();
         
+        // Determine grid dimensions
+        if (choices.length != 0)
+        {
+            if (choices.length < 4)
+            {
+                gl = new GridLayout(1, choices.length);
+            }
+            else
+            {
+                gl = new GridLayout(1, choices.length);
+            }
+            
+            gl.setHgap(25);
+            gl.setVgap(25);
+
+            choiceButtonPanel.setLayout(gl);
+        }
+        else
+        {
+            return;
+        }
         
+        // Generate Buttons
+        choiceButtons = new JButton[choices.length];
+
+        for (int i = 0; i < choices.length; i++)
+        {
+            choiceButtons[i] = new JButton();
+
+            choiceButtons[i].setFont(new Font("Comic Sans MS", Font.PLAIN, 16));
+
+            choiceButtons[i].setBackground(Color.black);
+            choiceButtons[i].setForeground(Color.white);
+
+            choiceButtons[i].setText(choices[i].getName());
+            choiceButtonPanel.add(choiceButtons[i]);
+        }
+
         
-        choiceButtonPanel.setLayout(gl);
-
-
-
     }
 
     // Ensures program ends when window is closed.
