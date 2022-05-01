@@ -1,32 +1,33 @@
 package Modules.Scenes;
+import Modules.Entity;
 import Modules.Characters.*;
 
-public class Choice
+public class Choice extends Entity
 {
     String text;
 
-    Scene linkIn;
-    Scene linkOut;
+    int linkOut; // The scene this choice links to.
     
     SkillCheck skillCheck; // Controls whether the character meets the criteria for this choice to be visible to the user.
 
 
-    public Choice(String text, Scene linkOut)
+    public Choice(String text, int linkOut)
     {
-        this.text = text;
+        super(text);
         this.linkOut = linkOut;
 
         skillCheck = null;
     }
 
-    public Choice(String text, Scene linkOut, SkillCheck skillCheck)
+    public Choice(String text, int linkOut, SkillCheck skillCheck)
     {
-        this.text = text;
+        super(text);
         this.linkOut = linkOut;
+        
         this.skillCheck = skillCheck;
     }
 
-    boolean isVisible(Player c)
+    boolean isVisible(Player p)
     {
         // For choices with no skill checks.
         if (skillCheck == null)
@@ -34,7 +35,7 @@ public class Choice
             return true;
         }
 
-        if (skillCheck.testCheck(c))
+        if (skillCheck.testCheck(p))
         {
             return true;
         }

@@ -18,6 +18,8 @@ public class Scene extends Entity
         super(name);
         this.sceneText = description;
         this.id = id;
+
+        choices = new ArrayList<Choice>();
     }
     public Scene(String name, String description, int id, Choice[] options)
     {
@@ -33,9 +35,20 @@ public class Scene extends Entity
         }
     }
 
-    // Set up the scene to be displayed
+    public void addChoice(Choice c)
+    {
+        choices.add(c);
+    }
+
+    // Set up the choices to be displayed
     public void activateScene(Player p)
     {
+        if (choices == null)
+        {
+            return;
+        }
+    
+    
         activeChoices = new ArrayList<Choice>();
     
         for (int i = 0; i < choices.size(); i++)
@@ -47,12 +60,12 @@ public class Scene extends Entity
                 activeChoices.add(curChoice);
             }
         }
-
     }
 
+    // List of choices that pass skill checks.
     public Choice[] getActiveChoices()
     {
-        if (activeChoices.size() < 0)
+        if (activeChoices == null || activeChoices.size() < 0)
         {
             return null;
         }
