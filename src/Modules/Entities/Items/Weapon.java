@@ -1,4 +1,4 @@
-package Modules.Items;
+package Modules.Entities.Items;
 
 public class Weapon extends Item
 {

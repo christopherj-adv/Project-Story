@@ -1,6 +1,6 @@
-package Modules.Items;
+package Modules.Entities.Items;
 
-import Modules.Entity;
+import Modules.Entities.Entity;
 
 public class Equipment extends Entity
 {

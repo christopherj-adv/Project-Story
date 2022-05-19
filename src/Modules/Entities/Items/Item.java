@@ -1,6 +1,6 @@
-package Modules.Items;
+package Modules.Entities.Items;
 
-import Modules.Entity;
+import Modules.Entities.Entity;
 
 enum itemRarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, HOLY}
 public class Item extends Entity

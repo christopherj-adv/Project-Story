@@ -1,6 +1,6 @@
-package Modules;
+package Modules.Entities;
     /*
-        This is the most generic "Object." Characters, Scenes, and Items all extend this.
+        This is the most generic game object. Characters, Scenes, and Items all extend this.
     */
 
 public abstract class Entity

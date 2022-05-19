@@ -1,11 +1,11 @@
-package Modules.Characters;
+package Modules.Entities.Characters;
 
 import java.util.ArrayList;
 
-import Modules.*;
-import Modules.Items.Equipment;
-import Modules.Items.Item;
-import Modules.Items.Weapon;
+import Modules.Entities.Entity;
+import Modules.Entities.Items.Equipment;
+import Modules.Entities.Items.Item;
+import Modules.Entities.Items.Weapon;
 
 public class Player extends Entity
 {

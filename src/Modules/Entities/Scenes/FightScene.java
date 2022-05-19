@@ -1,4 +1,4 @@
-package Modules.Scenes;
+package Modules.Entities.Scenes;
 
 public class FightScene extends Scene
 {

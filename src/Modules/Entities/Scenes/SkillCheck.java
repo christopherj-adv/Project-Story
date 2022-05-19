@@ -1,6 +1,6 @@
-package Modules.Scenes;
+package Modules.Entities.Scenes;
 
-import Modules.Characters.*;
+import Modules.Entities.Characters.*;
 
 // Used to dynamically add options in scenes.
 public class SkillCheck
